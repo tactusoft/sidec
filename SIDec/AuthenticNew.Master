@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="AuthenticNew.master.cs" Inherits="SIDec.AuthenticNew" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SIGES - Sistema de Información Gestión del Suelo</title>
+    <link rel="shortcut icon" type="image/png" href="./images/sidec_fav.png" />
+    <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./styles/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/sitenew.css?v=1" />
+    <link rel="stylesheet" href="./styles/material/material-components-web.min.css" />
+    <script type="text/javascript" src="./styles/jquery/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="./styles/jquery/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="./styles/gridviewscroll/gridviewscroll-custom.min.js"></script>
+    <script type="text/javascript" src="./styles/bootstrap/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="./styles/sitenew.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+
+</head>
+<body>
+    <form id="form" runat="server">
+
+        <div class="flex-container">
+            <div id="sidenav" class="sidenav">
+                <ul id="menubar" runat="server" class="list-unstyled components">
+                    <li class="sidenav-header sticky-top">
+                        <img alt="" src="./images/logo-sidec.png" class="mt-1 mx-auto img-logo-nav" />
+                    </li>
+                </ul>
+                <div class="buttomMenu">
+                    <hr class="sidebar-hr" />
+                    <ul class="list-unstyled components">
+                        <li class="li_a_item">
+                            <asp:LinkButton ID="lbGeosidec" runat="server" CssClass="" OnClick="lbGeosidec_Click" CausesValidation="false">
+                            <i class="fas fa-globe d-i"></i>&nbsp;Geosidec
+                            </asp:LinkButton>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#"><i class="fas fa-external-link-alt d-i"></i>&nbsp;Enlaces de Interés</a>
+                            <div class="dropdown-menu fs12">
+                                <a class="dropdown-item" href="https://observatoriohabitat.org/" target="_blank">Observatorio de Hábitat</a>
+                                <a class="dropdown-item" href="https://www.vur.gov.co/siteminderagent/forms_es-ES/loginsnr.fcc?" target="_blank">VUR</a>
+                                <a class="dropdown-item" href="http://vucapp.habitatbogota.gov.co/vuc/login.seam" target="_blank">VUC</a>
+                                <a class="dropdown-item" href="https://sinupot.sdp.gov.co/portalp/home/" target="_blank">SINUPOT</a>
+                                <a class="dropdown-item" href="https://mapas.bogota.gov.co" target="_blank">IDECA - Mapa de Referencia</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <hr class="sidebar-hr" />
+                    <ul class="list-unstyled components">
+                        <li class="li_a_item">
+                            <asp:LinkButton ID="lbManual" runat="server" CssClass="" OnClick="lbManual_Click" CausesValidation="false">
+              <i class="fas fa-book d-i"></i>&nbsp;Manual de Usuario
+                            </asp:LinkButton>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="content" class="content">
+                <div class="content-up">
+                    <header id="header" class="content-header">
+                        <div class="">
+                            <ul class="nav navbar">
+                                <li class="nav-item" id="sidenavCollapse">
+                                    <button type="button" class="btn btn-dark btn-sm m-0">
+                                        <i class="fas fa-bars"></i>
+                                    </button>
+                                </li>
+                                <li class="nav-item mr-auto">
+                                    <h5 class="nav-link text-dark main-title m-0">Sistema de Información Gestión del Suelo</h5>
+                                </li>
+                                <li class="nav-item ml-auto">
+                                    <asp:Label runat="server" ID="lblUser" CssClass="text-secondary"></asp:Label>
+                                    <asp:LinkButton ID="lbCambiar" runat="server" CssClass="ml-1" CausesValidation="false" OnClick="lbCambiar_Click" ToolTip="Cambiar contraseña">
+                    <i class="fas fa-lock col-i"></i>
+                                    </asp:LinkButton>
+                                    <asp:LinkButton ID="lbSalir" runat="server" CssClass="ml-2" OnClick="lbSalir_Click" ToolTip="Salir">
+                    <i class="fas fa-sign-out-alt col-d"></i>
+                                    </asp:LinkButton>
+                                </li>
+                            </ul>
+                        </div>
+                    </header>
+
+                    <main class="content-main">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                            <%-- pagina hija --%>
+                        </asp:ContentPlaceHolder>
+                    </main>
+                </div>
+                <footer class="footer">
+                    <div>
+                        <a href="https://www.habitatbogota.gov.co" target="_blank" class="text-success">Secretaría Distrital del Hábitat</a>
+                        <span class="text-success mx-2">|</span>
+                        <a href="https://www.habitatbogota.gov.co/node/207" target="_blank" class="text-success mr-1">Subdirección de Gestión del Suelo</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
+
+
+<script>    
+    $('#divData').on('keydown', 'input, select', function (e) {
+        var self = $(this)
+            , form = self.parents('form:eq(0)')
+            , focusable
+            , next
+            ;
+        if (e.keyCode == 13) {
+            focusable = form.find('input,a,select,button,textarea').filter(':visible').filter(':enabled');
+            next = focusable.eq(focusable.index(this) + 1);
+            if (next.length) {
+                next.focus();
+            } else {
+                form.submit();
+            }
+            return false;
+        }
+    });
+
+    var varSizeDoc = [
+        'menubar=0;toolbar=0,scrollbars=0,resizable=0,titlebar=0,height=' + screen.height * 0.8,
+        'width=860'
+    ].join(',');
+
+    //function ver Doc() {
+    //    var myWin = window.open("doc.aspx", "mywindow", varSizeDoc);
+    //    varSizeDoc
+    //}
+</script>

@@ -1,0 +1,38 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="PopupNew.Master.cs" Inherits="SIDec.PopupNew" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SIGES - Sistema de Información Gestión del Suelo</title>
+  <link rel="shortcut icon" type="image/png" href="./images/sidec_fav.png" />
+  <link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="./styles/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="./styles/global.css" />
+  <link rel="stylesheet" href="./styles/sitenew.css?v=1" />
+  <link rel="stylesheet" href="./styles/material/material-components-web.min.css" />
+  <script type="text/javascript" src="./styles/jquery/jquery-2.2.4.min.js"></script>
+  <script type="text/javascript" src="./styles/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./styles/gridviewscroll/gridviewscroll-custom.min.js"></script>
+  <script type="text/javascript" src="./styles/bootstrap/bootstrap.bundle.min.js"></script>
+  <script type="text/javascript" src="./styles/sitenew.js"></script>
+  <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="" onblur="window.focus()">
+  <form id="form1" runat="server">
+    <div class="">
+      <asp:LinkButton ID="lbSalir" runat="server" CssClass="btn btn-outline-success btn-exit" OnClientClick="closeWindow();" CausesValidation="false">
+        <i class="fas fa-sign-out-alt"></i>&nbsp;Salir
+      </asp:LinkButton>
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      </asp:ContentPlaceHolder>
+    </div>
+  </form>
+</body>
+<script>
+  function closeWindow() {
+    window.close();
+  }
+</script>
+</html>

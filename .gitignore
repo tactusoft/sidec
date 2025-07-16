@@ -1,0 +1,73 @@
+## Build results
+bin/
+obj/
+[Ll]og/
+*.log
+*.tlog
+*.pdb
+*.cache
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.vspscc
+*.vssscc
+
+## IIS Express
+/.vs/
+.vscode/
+*.vscode
+
+## NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+## WebForms specific
+*.Publish.xml
+*.dbmdl
+App_Data/*.mdf
+App_Data/*.ldf
+
+## Rider / JetBrains
+.idea/
+*.sln.iml
+
+## User-specific files
+*.user
+*.userosscache
+*.sln.docstates
+
+## Web Deploy
+.publishsettings
+*.pubxml
+*.pubxml.user
+
+## Others
+*.tmp
+*.bak
+*.Backup
+*.orig
+_ReSharper*/
+*.resharper
+*.DotSettings.user
+*.scc
+
+# node_modules (if used, e.g. for gulp, npm, etc.)
+node_modules/
+
+# Environment files
+.env
+.env.*
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Coverage reports
+coverage/

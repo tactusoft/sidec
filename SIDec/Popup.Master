@@ -1,0 +1,48 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Popup.Master.cs" Inherits="SIDec.Popup" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>SIGES - Sistema de Información Gestión del Suelo</title>
+  <link rel="shortcut icon" type="image/png" href="./images/sidec_fav.png" />
+  <link rel="stylesheet" href="styles/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="styles/fontawesome/css/all.min.css" />
+  <link rel="stylesheet" href="styles/site.css?v=1" />
+  <link rel="stylesheet" href="styles/global.css?v=1" />
+  <%--<script src="styles/sidec.js"></script>--%>
+  <script src="styles/jquery/jquery-1.11.3.min.js"></script>
+  <script src="styles/jquery/jquery-ui.min.js"></script>
+  <script src="styles/bootstrap/popper.min.js"></script>
+  <script src="styles/gridviewscroll/gridviewScroll.min.js"></script>
+  <script src="styles/bootstrap/bootstrap.min.js"></script>
+  <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body class="w900 oh ml5" onblur="window.focus()">
+  <form id="form1" runat="server">
+    <div>
+      <div class="m0 w-100">
+        <div class="divSidec">
+          <div class="divSidec1">
+            <p class="txt_t3 d-i">SIGES - </p>
+            <p class="txt_t4 d-i">Sistema de Información Gestión del Suelo</p>
+          </div>
+          <div class="divSidec2">
+            <img src="./images/sidec0.png" class="mt4 w30 fr" />
+          </div>
+          <asp:LinkButton ID="lbSalir" runat="server" CssClass="btn btn-outline-success btn-sm mt5 mb0 fr" OnClientClick="closeWindow();" CausesValidation="false">
+                            <i class="fas fa-sign-out-alt"></i>&nbspsalir
+          </asp:LinkButton>
+        </div>
+      </div>
+      <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+      </asp:ContentPlaceHolder>
+    </div>
+  </form>
+</body>
+<script>
+  function closeWindow() {
+    window.close();
+  }
+</script>
+</html>

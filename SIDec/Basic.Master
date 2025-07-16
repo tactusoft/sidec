@@ -1,0 +1,40 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Basic.master.cs" Inherits="SIDec.Basic" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>SIGES - Sistema de Información Gestión del Suelo</title>
+	<link rel="shortcut icon" type="image/png" href="./images/sidec_fav.png" />
+	<link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="./styles/fontawesome/css/all.min.css" />
+	<link rel="stylesheet" href="./styles/global.css" />
+	<link rel="stylesheet" href="./styles/sitenew.css?v=1" />
+	<script type="text/javascript" src="./styles/sitenew.js"></script>
+	<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<div id="flex-out" class="flex-container">
+			<div class="image-box__background"></div>
+			<div class="flex-item">
+				<img src="./images/logo-sidec.png" class="img-logo" />
+				<h6 class="t-c">Sistema de Información Gestión del Suelo</h6>
+				<hr />
+				<div class="mb-3">
+					<p id="pMensaje" style="visibility: hidden;"></p>
+				</div>
+				<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+					<%-- pagina hija --%>
+				</asp:ContentPlaceHolder>
+				<hr />
+				<div class="footer-out">
+					<a href="https://www.habitatbogota.gov.co" target="_blank" class="d-b">Secretaría Distrital del Hábitat</a>
+					<a href="https://www.habitatbogota.gov.co/node/207" target="_blank" class="mt-2">Subdirección de Gestión del Suelo</a>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

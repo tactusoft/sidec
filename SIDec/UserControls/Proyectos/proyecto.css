@@ -1,0 +1,23 @@
+﻿.uc-py-div-con-scroll {
+    max-height: 160px; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+}
+
+.uc-py-btn-div-btm-lft {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.uc-py-pd-btn-inline {
+    display: inline-flex;
+    align-items: center;
+}
+
+.uc-py-section-middle {
+    background: #e4e4e4;
+    padding: 0px 10px 0px 0px;
+}
+.uc-center {
+    text-align: center;
+}

@@ -1,0 +1,100 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Authentic.master.cs" Inherits="SIDec.Authentic" %>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>SIGES - Sistema de Información Gestión del Suelo</title>
+	<link rel="shortcut icon" type="image/png" href="./images/sidec_fav.png" />
+	<link rel="stylesheet" href="./styles/bootstrap/bootstrap.min.css" />
+	<link rel="stylesheet" href="./styles/fontawesome/css/all.min.css" />
+	<link rel="stylesheet" href="./styles/site.css?v=1" />
+	<link rel="stylesheet" href="./styles/global.css?v=1" />
+	<script type="text/javascript" src="./styles/site.js"></script>
+	<script type="text/javascript" src="./styles/jquery/jquery-1.11.3.min.js"></script>
+	<script type="text/javascript" src="./styles/jquery/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./styles/bootstrap/popper.min.js"></script>
+	<script type="text/javascript" src="./styles/gridviewscroll/gridviewscroll.min.js"></script>
+	<script type="text/javascript" src="./styles/bootstrap/bootstrap.min.js"></script>
+	<asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="form1" runat="server">
+		<%--<div>--%>
+		<div class="divFix">
+			<div class="divHeader">
+				<img alt="" src="./images/sidec_header.png" class="imgLogo" />
+			</div>
+			<nav class="navbar navbar-expand-sm navbar-light bg-light justify-content-between h40 bb">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNav">
+					<ul id="menubar" runat="server" class="navbar-nav">
+					</ul>
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<i class="fas fa-user col-sec mt12"></i>&nbsp;<asp:Label runat="server" ID="lblUser" CssClass="text-secondary fs12 mr20"></asp:Label>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbGeosidec" runat="server" CssClass="btn btn-light btn-sm" OnClick="lbGeosidec_Click" CausesValidation="false" ToolTip="Abrir Geosidec">
+								<i class="fas fa-globe col-i"></i>&nbsp;<asp:Label runat="server" CssClass="text-info fs12">Geosidec</asp:Label>
+							</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbCambiar" runat="server" CssClass="btn btn-light btn-sm" CausesValidation="false" OnClick="lbCambiar_Click" ToolTip="Cambiar contraseña">
+								<i class="fas fa-lock col-i"></i>
+							</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbManual" runat="server" CssClass="btn btn-light btn-sm" OnClick="lbManual_Click" CausesValidation="false" ToolTip="Manual de Usuario">
+								<i class="fas fa-book col-i"></i>
+							</asp:LinkButton>
+						</li>
+						<li>
+							<asp:LinkButton ID="lbSalir" runat="server" CssClass="btn btn-light btn-sm" OnClick="lbSalir_Click" ToolTip="Salir">
+								<i class="fas fa-sign-out-alt col-w"></i>
+							</asp:LinkButton>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="h95"></div>
+		<asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+			<%-- pagina hija --%>
+		</asp:ContentPlaceHolder>
+		<div class="divFooter alert alert-dark">Secretaría Distrital del Hábitat - Subdirección de Gestión del Suelo</div>
+
+		<script>
+			$('#divData').on('keydown', 'input, select', function (e) {
+				var self = $(this)
+					, form = self.parents('form:eq(0)')
+					, focusable
+					, next
+					;
+				if (e.keyCode == 13) {
+					focusable = form.find('input,a,select,button,textarea').filter(':visible').filter(':enabled');
+					next = focusable.eq(focusable.index(this) + 1);
+					if (next.length) {
+						next.focus();
+					} else {
+						form.submit();
+					}
+					return false;
+				}
+			});
+
+			var varSizeDoc = [
+				'menubar=0;toolbar=0,scrollbars=0,resizable=0,titlebar=0,height=' + screen.height * 0.8,
+				'width=860'
+			].join(',');
+
+			//function ver Doc() {
+			//	var myWin = window.open("doc.aspx", "mywindow", varSizeDoc);
+			//	varSizeDoc
+			//}
+		</script>
+	</form>
+</body>
+</html>
