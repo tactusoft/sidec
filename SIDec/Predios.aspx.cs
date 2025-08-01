@@ -6048,7 +6048,7 @@ namespace SIDec
                   "(área predio:{1}m2), " + s1 + ", " + "toda vez que el potencial edificatorio en predios con estas áreas, es inferior a 50 unidades de vivienda, debido a que la aplicación de los " +
                   "índices de ocupación y construcción, así como las normas volumétricas, establecen que el potencial edificatorio resultante, con destinación específica para VIP y/o VIS, " +
                   "no absorbe los costos directos e indirectos que se requieren para el desarrollo de un proyecto inmobiliario.";
-                if (gvPredios.SelectedRow.Cells[7].Text.ToString() != "&nbsp;" && (Convert.ToDecimal(gvPredios.SelectedRow.Cells[7].Text) < 500))
+                if (gvPredios.SelectedRow.Cells[8].Text.ToString() != "&nbsp;" && (Convert.ToDecimal(gvPredios.SelectedRow.Cells[8].Text) < 500))
                 {
                     strConclusion = iOrden.ToString() + ". " + string.Format(s, gvPredios.SelectedRow.Cells[0].Text, gvPredios.SelectedRow.Cells[7].Text) + System.Environment.NewLine + System.Environment.NewLine;
                     iOrden++;

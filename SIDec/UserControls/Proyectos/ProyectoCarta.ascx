@@ -261,7 +261,7 @@
             <div class="row">
                 <div class="gv-w">
                     <asp:GridView ID="gvProyectoCartas" CssClass="gv" runat="server" PageSize="500" AllowPaging="false" AutoGenerateColumns="False" SAllowSorting="true"
-                        DataKeyNames="au_proyecto_carta,carta_intencion_firmada,meses_desarrollo,fecha_firma,ruta_carta,proy_en_proceso" EmptyDataText="No hay registros asociados" howHeaderWhenEmpty="true"
+                        DataKeyNames="au_proyecto_carta,carta_intencion_firmada,meses_desarrollo,fecha_firma,ruta_carta,proy_en_proceso" EmptyDataText="No hay registros asociados" ShowHeaderWhenEmpty="true"
                         OnRowCommand="gvProyectoCartas_RowCommand" OnRowDataBound="gvProyectoCartas_RowDataBound">
                         <Columns>
                             <asp:BoundField DataField="au_proyecto_carta" HeaderText="au_proyecto_carta" Visible="false" />
